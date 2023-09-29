@@ -1,4 +1,4 @@
-resource "openstack_compute_instance_v2" "remote-exec" {
+resource "selectel_vpc_project_v2" "remote-exec" {
   name = "test"
   connection {
     type = "ssh"
