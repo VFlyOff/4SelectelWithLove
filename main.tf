@@ -5,6 +5,10 @@ required_version = ">= 0.14.0"
       source  = "terraform-provider-openstack/openstack"
       version = "~> 1.49.0"
     }
+    selectel = {
+      source = "selectel/selectel"
+      version = "4.0.1-alpha"
+    }
   }
 }
 
@@ -15,6 +19,13 @@ provider "openstack" {
   password    = "${var.user_password}"
   auth_url    = "https://api.selvpc.ru/identity/v3"
   region      = "${var.region}"
+}
+
+provider "selectel" {
+  domain_name = "${var.domain_name}"
+  username = "${var.user_name}"
+  password = "${var.user_password}"
+  token = "<token>"
 }
 
 resource "openstack_compute_flavor_v2" "flavor_1" {
