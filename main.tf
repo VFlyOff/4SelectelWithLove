@@ -35,7 +35,7 @@ resource "openstack_compute_keypair_v2" "terraform_key" {
   public_key = "${var.public_key}"
 }
 
-data "openstack_images_image_v2" "image_ubuntu_18_04" {
+data "openstack_images_image_v2" "image_ubuntu_20_04" {
   most_recent = true
   properties = {
     x_sel_image_source_file = "ubuntu-bionic-amd64-selectel-master-product-0.1.img"
@@ -83,7 +83,7 @@ resource "openstack_networking_floatingip_v2" "floatingip_1" {
 resource "openstack_blockstorage_volume_v3" "volume_1" {
   name              = "volume-for-${var.server_name}"
   size              = "10"
-  image_id          = "${data.openstack_images_image_v2.image_ubuntu_18_04.id}"
+  image_id          = "${data.openstack_images_image_v2.image_ubuntu_20_04.id}"
   volume_type       = "${var.volume_type}"
   availability_zone = "${var.az_zone}"
 
