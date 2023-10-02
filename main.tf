@@ -29,10 +29,10 @@ provider "selectel" {
 }
 
 resource "openstack_compute_flavor_v2" "flavor_1" {
-  name      = "flavor-1cpu-1g-0hdd"
-  ram       = "1024"
-  vcpus     = "1"
-  disk      = "0"
+  name      = "flavor-<1>cpu-<1>g-<0>hdd"
+  ram       = "<1024>"
+  vcpus     = "<1>"
+  disk      = "<0>"
   is_public = false
 
   lifecycle {
